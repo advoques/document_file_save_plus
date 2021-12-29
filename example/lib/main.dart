@@ -1,6 +1,5 @@
 import 'dart:typed_data';
-
-import 'package:document_file_save_plus/document_file_save.dart';
+import 'package:document_file_save_plus/document_file_save_plus.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 
@@ -25,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     Uint8List textBytes1 = Uint8List.fromList(textBytes);
 
     // save multiple files
-    DocumentFileSave.saveMultipleFiles([htmlBytes1, textBytes1], ["htmlfile.html", "textfile.txt"], ["text/html", "text/plain"]);
+    DocumentFileSavePlus.saveMultipleFiles([htmlBytes1, textBytes1], ["htmlfile.html", "textfile.txt"], ["text/html", "text/plain"]);
 
     // save multiple files (case that file have same name). system will automatically append number to filename.
     //DocumentFileSave.saveMultipleFiles([htmlBytes, textBytes], ["file.txt", "file.txt"], ["text/html", "text/plain"]);

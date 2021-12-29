@@ -1,4 +1,4 @@
-import 'package:document_file_save_plus/document_file_save.dart';
+import 'package:document_file_save_plus/document_file_save_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await DocumentFileSave.platformVersion, '42');
+    expect(await DocumentFileSavePlus.platformVersion, '42');
   });
 }

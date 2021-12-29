@@ -3,7 +3,7 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'package:flutter/services.dart';
 
-class DocumentFileSave {
+class DocumentFileSavePlus {
   static const MethodChannel _channel =
       const MethodChannel('document_file_save');
 
