@@ -1,10 +1,10 @@
-# document_file_save
+# document_file_save_plus
 Save bytes data into Download folder (Android), or show save dialog (iOS). You can save any file types (Ex. .txt, .png, .jpg, .pdf, etc)
 
 ## Install plugin
 add this line into pubspec.yaml
 ```
-document_file_save: ^1.0.3
+document_file_save_plus: ^1.0.1
 ```
 
 ## Permission
@@ -29,7 +29,7 @@ void saveMultipleFiles(List<Uint8List> dataList, List<String> fileNameList, List
 
 ## Example usage
 ```
-import 'package:document_file_save/document_file_save.dart';
+import 'package:document_file_save_plus/document_file_save_plus.dart';
 
 //Save multiple files
 List<int> textBytes = utf8.encode("Some data");
