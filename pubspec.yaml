@@ -1,6 +1,6 @@
 name: document_file_save_plus
 description: Save bytes data into Download folder (Android), or show save dialog (iOS).
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/advoques/document_file_save_plus
 
 environment:

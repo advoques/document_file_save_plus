@@ -3,3 +3,6 @@
 
 ## 1.0.1
  - updated readme file
+
+## 1.0.2
+ - IOS fixes
