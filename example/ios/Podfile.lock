@@ -1,22 +1,22 @@
 PODS:
-  - document_file_save (0.0.1):
+  - document_file_save_plus (0.0.1):
     - Flutter
   - Flutter (1.0.0)
 
 DEPENDENCIES:
-  - document_file_save (from `.symlinks/plugins/document_file_save/ios`)
+  - document_file_save_plus (from `.symlinks/plugins/document_file_save_plus/ios`)
   - Flutter (from `Flutter`)
 
 EXTERNAL SOURCES:
-  document_file_save:
-    :path: ".symlinks/plugins/document_file_save/ios"
+  document_file_save_plus:
+    :path: ".symlinks/plugins/document_file_save_plus/ios"
   Flutter:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  document_file_save: c9183a02b85d6cb3e106e11b87260c0839e01ad9
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  document_file_save_plus: 4ee6d2721c4904010bb43b5fa85b83394c1b1fc7
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.2
