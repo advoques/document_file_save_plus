@@ -6,3 +6,6 @@
 
 ## 1.0.2
  - IOS fixes
+
+## 1.0.3
+ - IOS fixes
