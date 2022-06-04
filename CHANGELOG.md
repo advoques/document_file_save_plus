@@ -12,3 +12,6 @@
 
 ## 1.0.4
  - gradle update to 4.1.0 from 3.5.0
+
+## 1.0.5
+ - Minor bug fixes
