@@ -4,7 +4,7 @@ Save bytes data into Download folder (Android), or show save dialog (iOS). You c
 ## Install plugin
 add this line into pubspec.yaml
 ```
-document_file_save_plus: ^1.0.1
+document_file_save_plus: ^1.0.4
 ```
 
 ## Permission
