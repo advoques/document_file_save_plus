@@ -9,3 +9,6 @@
 
 ## 1.0.3
  - IOS fixes
+
+## 1.0.4
+ - gradle update to 4.1.0 from 3.5.0
