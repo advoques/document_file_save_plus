@@ -47,7 +47,6 @@ class DocumentFileSavePlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
     channel.setMethodCallHandler(this)
   }
 
-  @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     this.call = call
     this.result = result
@@ -124,7 +123,6 @@ class DocumentFileSavePlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
     }
   }
 
-  @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
   override fun onRequestPermissionsResult(
     requestCode: Int,
     permissions: Array<out String>,
