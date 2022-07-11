@@ -123,7 +123,11 @@ class DocumentFileSavePlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
     }
   }
 
-  override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>?, grantResults: IntArray): Boolean {
+  override fun onRequestPermissionsResult(
+    requestCode: Int,
+    permissions: Array<out String>,
+    grantResults: IntArray
+  ): Boolean {
     if (requestCode == this.REQ_CODE) {
       val granted = grantResults[0] == PackageManager.PERMISSION_GRANTED
       if (granted) {
