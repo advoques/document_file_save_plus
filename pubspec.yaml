@@ -1,10 +1,10 @@
 name: document_file_save_plus
 description: Save bytes data into Download folder (Android), or show save dialog (iOS).
-version: 1.0.5
+version: 1.0.7
 homepage: https://github.com/advoques/document_file_save_plus
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.16.0 <3.0.0"
   flutter: ">=1.20.0"
 
 dependencies:

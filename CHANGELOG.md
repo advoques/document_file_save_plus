@@ -15,3 +15,9 @@
 
 ## 1.0.5
  - Minor bug fixes
+
+## 1.0.6
+ - Version Updated
+
+## 1.0.7
+ - Plugin Issue Fixed.
