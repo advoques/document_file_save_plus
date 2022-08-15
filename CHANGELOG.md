@@ -21,3 +21,6 @@
 
 ## 1.0.7
  - Plugin Issue Fixed.
+
+## 1.0.8
+ - SDK Updated.
