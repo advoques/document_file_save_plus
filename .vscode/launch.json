@@ -25,7 +25,10 @@
             "name": "example",
             "cwd": "example",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--verbose"
+            ]
         },
         {
             "name": "example (profile mode)",

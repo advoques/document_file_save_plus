@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -17,6 +19,31 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
 
+    _saveFile();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('document_file_save_plus Plugin'),
+        ),
+        body: const Center(
+          child: Text(
+            'Please check file in Download folder (or Files App in iOS)',
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: _saveFile,
+          tooltip: 'Save File',
+          child: const Icon(Icons.add),
+        ),
+      ),
+    );
+  }
+
+  void _saveFile() {
     List<int> htmlBytes =
         utf8.encode("<h1>Header 1</h1><p>This is sample text</p>");
     List<int> textBytes = utf8.encode("Some data");
@@ -35,21 +62,5 @@ class _MyAppState extends State<MyApp> {
 
     // save single file
     // DocumentFileSave.saveFile(htmlBytes, "my test html file.html", "text/html");
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('document_file_save Plugin'),
-        ),
-        body: Center(
-          child: Text(
-            'Please check file in Download folder (or Files App in iOS)',
-          ),
-        ),
-      ),
-    );
   }
 }
