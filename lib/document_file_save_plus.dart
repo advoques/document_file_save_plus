@@ -29,4 +29,16 @@ class DocumentFileSavePlus {
       mimeTypeList: mimeTypeList,
     );
   }
+
+  Future<void> saveFile(
+    Uint8List data,
+    String fileName,
+    String mimeType,
+  ) async {
+    return DocumentFileSavePlusPlatform.instance.saveMultipleFiles(
+      dataList: [data],
+      fileNameList: [fileName],
+      mimeTypeList: [mimeType],
+    );
+  }
 }

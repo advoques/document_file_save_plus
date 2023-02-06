@@ -77,16 +77,4 @@ class MethodChannelDocumentFileSavePlus extends DocumentFileSavePlusPlatform {
       rethrow;
     }
   }
-
-  Future<void> saveFile(
-    Uint8List data,
-    String fileName,
-    String mimeType,
-  ) async {
-    await saveMultipleFiles(
-      dataList: [data],
-      fileNameList: [fileName],
-      mimeTypeList: [mimeType],
-    );
-  }
 }
