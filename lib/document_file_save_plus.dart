@@ -1,74 +1,32 @@
+// You have generated a new plugin project without specifying the `--platforms`
+// flag. A plugin project with no platform support was generated. To add a
+// platform, run `flutter create -t plugin --platforms <platforms> .` under the
+// same directory. You can also find a detailed instruction on how to add
+// platforms in the `pubspec.yaml` at
+// https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
 
-import 'dart:async';
 import 'dart:typed_data';
-import 'package:flutter/services.dart';
+
+import 'document_file_save_plus_platform_interface.dart';
 
 class DocumentFileSavePlus {
-  static const MethodChannel _channel =
-      const MethodChannel('document_file_save');
-
-   static Future<String?> get platformVersion async {
-    return await _channel.invokeMethod('getPlatformVersion');
+  Future<String?> get platformVersion {
+    return DocumentFileSavePlusPlatform.instance.platformVersion;
   }
 
-  static Future<int?> get batteryPercentage async {
-    return await _channel.invokeMethod('getBatteryPercentage');
+  Future<int?> get batteryPercentage {
+    return DocumentFileSavePlusPlatform.instance.batteryPercentage;
   }
 
-  static Future<void> saveMultipleFiles(List<Uint8List>? dataList, List<String> fileNameList, List<String> mimeTypeList) async {
-    if (dataList!.length != fileNameList.length)
-      throw "function saveMultipleFiles: length of 'dataList' is not equal to the length of 'fileNameList'";
-
-    if (dataList.length != mimeTypeList.length)
-      throw "function saveMultipleFiles: length of 'dataList' is not equal to the length of 'mimeTypeList'";
-
-    for (var i = 0; i < dataList.length; i++) {
-      if (dataList[i].isEmpty)
-        throw "function saveMultipleFiles: dataList item cannot be null";
-    }
-
-    for (var i = 0; i < mimeTypeList.length; i++) {
-      if (mimeTypeList[i].isEmpty)
-        throw "function saveMultipleFiles: mimeTypeList item cannot be null";
-    }
-
-    var fileNameCount = new Map();
-    for (var i = 0; i < fileNameList.length; i++) {
-      String? fileName = fileNameList[i];
-
-      if (fileName.length == 0)
-        fileName = "file";
-
-      if (fileNameCount.containsKey(fileName)) {
-        fileNameCount[fileName] += 1;
-        var extensionIndex = fileName.lastIndexOf('.');
-        if (extensionIndex == -1)
-          extensionIndex = fileName.length;
-
-        var extension = '';
-        if (extensionIndex < fileName.length)
-          extension = fileName.substring(extensionIndex);
-
-        fileName = fileName.substring(0, extensionIndex) + '_' + fileNameCount[fileName].toString() + extension;
-      } else {
-        fileNameCount[fileName] = 1;
-      }
-
-      fileNameList[i] = fileName;
-    }
-
-    try {
-      await _channel.invokeMethod('saveMultipleFiles', {
-        "dataList": dataList,
-        "fileNameList": fileNameList,
-        "mimeTypeList": mimeTypeList
-      });
-    } on PlatformException {
-      rethrow;
-    }
-  }
-
-  static Future<void> saveFile(Uint8List data, String fileName, String mimeType) async {
-    await saveMultipleFiles([data], [fileName], [mimeType]);
+  Future<void> saveMultipleFiles({
+    List<Uint8List>? dataList,
+    required List<String> fileNameList,
+    required List<String> mimeTypeList,
+  }) async {
+    return DocumentFileSavePlusPlatform.instance.saveMultipleFiles(
+      dataList: dataList,
+      fileNameList: fileNameList,
+      mimeTypeList: mimeTypeList,
+    );
   }
 }

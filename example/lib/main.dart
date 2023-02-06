@@ -13,18 +13,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
 
-    List<int> htmlBytes = utf8.encode("<h1>Header 1</h1><p>This is sample text</p>");
+    List<int> htmlBytes =
+        utf8.encode("<h1>Header 1</h1><p>This is sample text</p>");
     List<int> textBytes = utf8.encode("Some data");
     Uint8List htmlBytes1 = Uint8List.fromList(htmlBytes);
     Uint8List textBytes1 = Uint8List.fromList(textBytes);
 
     // save multiple files
-    DocumentFileSavePlus.saveMultipleFiles([htmlBytes1, textBytes1], ["htmlfile.html", "textfile.txt"], ["text/html", "text/plain"]);
+    DocumentFileSavePlus().saveMultipleFiles(
+      dataList: [htmlBytes1, textBytes1],
+      fileNameList: ["htmlfile.html", "textfile.txt"],
+      mimeTypeList: ["text/html", "text/plain"],
+    );
 
     // save multiple files (case that file have same name). system will automatically append number to filename.
     //DocumentFileSave.saveMultipleFiles([htmlBytes, textBytes], ["file.txt", "file.txt"], ["text/html", "text/plain"]);
@@ -41,10 +45,11 @@ class _MyAppState extends State<MyApp> {
           title: const Text('document_file_save Plugin'),
         ),
         body: Center(
-          child: Text('Please check file in Download folder (or Files App in iOS)'),
+          child: Text(
+            'Please check file in Download folder (or Files App in iOS)',
+          ),
         ),
       ),
     );
   }
-
 }

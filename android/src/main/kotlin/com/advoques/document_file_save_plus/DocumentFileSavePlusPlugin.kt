@@ -14,7 +14,7 @@ import android.os.ParcelFileDescriptor
 import android.provider.MediaStore
 import android.util.Log
 import androidx.annotation.NonNull
-import androidx.core.app.ActivityCompat
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -26,9 +26,8 @@ import io.flutter.plugin.common.PluginRegistry
 import java.io.File
 import java.io.FileOutputStream
 
-
-/** DocumentFileSavePlugin */
-class DocumentFileSavePlugin: FlutterPlugin, MethodCallHandler, ActivityAware, PluginRegistry.RequestPermissionsResultListener  {
+/** DocumentFileSavePlusPlugin */
+class DocumentFileSavePlusPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, PluginRegistry.RequestPermissionsResultListener  {
   private lateinit var context: Context
   private val REQ_CODE = 39285
   private var currentActivity : Activity? = null
@@ -43,7 +42,7 @@ class DocumentFileSavePlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     context = flutterPluginBinding.applicationContext
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "document_file_save")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "document_file_save_plus")
     channel.setMethodCallHandler(this)
   }
 
