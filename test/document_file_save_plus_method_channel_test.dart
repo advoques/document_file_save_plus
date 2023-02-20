@@ -1,9 +1,10 @@
-import 'package:document_file_save_plus/document_file_save_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:document_file_save_plus/document_file_save_plus_method_channel.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('document_file_save');
+  final platform = MethodChannelDocumentFileSavePlus();
+  const MethodChannel channel = MethodChannel('document_file_save_plus');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -18,6 +19,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await DocumentFileSavePlus.platformVersion, '42');
+    expect(await platform.platformVersion, '42');
   });
 }
