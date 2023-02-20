@@ -27,3 +27,6 @@
 
 ## 1.0.9
  - SDK related Issues Fixed.
+
+## 2.0.0
+ - Migrated to Flutter v3.7.0
