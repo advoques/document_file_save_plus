@@ -21,5 +21,5 @@ A new Flutter plugin project.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
   # Privacy manifest
-  s.resource_bundles = {'app_links_ios_privacy' => ['PrivacyInfo.xcprivacy']}
+  s.resource_bundles = {'document_file_save_plus' => ['PrivacyInfo.xcprivacy']}
 end
