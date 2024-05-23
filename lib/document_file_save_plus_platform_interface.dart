@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'document_file_save_plus_method_channel.dart';
+import 'document_file_save_plus_method_channel.dart' if (dart.library.js) 'document_file_save_plus_web_impl.dart';
 
 abstract class DocumentFileSavePlusPlatform extends PlatformInterface {
   /// Constructs a DocumentFileSavePlusPlatform.
@@ -10,12 +10,9 @@ abstract class DocumentFileSavePlusPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static DocumentFileSavePlusPlatform _instance =
-      MethodChannelDocumentFileSavePlus();
+  static DocumentFileSavePlusPlatform _instance = DocumentFileSavePlusPlatformImpl();
 
   /// The default instance of [DocumentFileSavePlusPlatform] to use.
-  ///
-  /// Defaults to [MethodChannelDocumentFileSavePlus].
   static DocumentFileSavePlusPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own

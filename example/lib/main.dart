@@ -51,16 +51,16 @@ class _MyAppState extends State<MyApp> {
     Uint8List textBytes1 = Uint8List.fromList(textBytes);
 
     // save multiple files
-    DocumentFileSavePlus().saveMultipleFiles(
+    /*DocumentFileSavePlus().saveMultipleFiles(
       dataList: [htmlBytes1, textBytes1],
       fileNameList: ["htmlfile.html", "textfile.txt"],
       mimeTypeList: ["text/html", "text/plain"],
-    );
+    );*/
 
     // save multiple files (case that file have same name). system will automatically append number to filename.
     //DocumentFileSave.saveMultipleFiles([htmlBytes, textBytes], ["file.txt", "file.txt"], ["text/html", "text/plain"]);
 
     // save single file
-    // DocumentFileSave.saveFile(htmlBytes, "my test html file.html", "text/html");
+    DocumentFileSavePlus().saveFile(htmlBytes1,"my test html file.html", "text/html");
   }
 }

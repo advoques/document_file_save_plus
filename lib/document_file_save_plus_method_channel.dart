@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 
 import 'document_file_save_plus_platform_interface.dart';
 
+typedef DocumentFileSavePlusPlatformImpl = MethodChannelDocumentFileSavePlus;
+
 /// An implementation of [DocumentFileSavePlusPlatform] that uses method channels.
 class MethodChannelDocumentFileSavePlus extends DocumentFileSavePlusPlatform {
   /// The method channel used to interact with the native platform.
