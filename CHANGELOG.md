@@ -30,3 +30,11 @@
 
 ## 2.0.0
  - Migrated to Flutter v3.7.0
+
+## 3.0.0
+- add web support
+- compileSdkVersion to 34
+- Migrate to Gradle's declarative plugins
+
+## 3.0.1
+- Update dependencies
