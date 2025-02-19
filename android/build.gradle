@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace = 'com.advoques.document_file_save_plus'
+    namespace "com.advoques.document_file_save_plus"
 
     compileSdk = 35
 
